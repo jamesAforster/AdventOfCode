@@ -45,6 +45,11 @@ public static class Helpers
         return arrayList.ToArray();
     }
     
+    /// <summary>
+    /// Reverses a string.
+    /// </summary>
+    /// <param name="string">String to reverse.</param>
+    /// <returns>string</returns>
     public static string Reverse(string s)
     {
         char[] charArray = s.ToCharArray();
@@ -52,7 +57,11 @@ public static class Helpers
         return new string(charArray);
     }
     
-    // Extracts all potential substrings, character priority
+    /// <summary>
+    // Extracts all potential substrings of a string, maintaining the ordering of the original characters. Prioritises each character in turn.
+    // </summary>
+    // <param name="input">String to extract.</param>
+    // <returns>List<string></returns>
     public static List<string> ExtractAllSubstrings(string input)
     {
         List<string> subStrings = new List<string>();
@@ -68,7 +77,11 @@ public static class Helpers
         return subStrings;
     }
     
-    // Extracts all potential substrings, lookahead priority
+    /// <summary>
+    // Extracts all potential substrings of a string, maintaining the ordering of the original characters. Prioritising lookahead.
+    // </summary>
+    // <param name="input">String to extract.</param>
+    // <returns>List<string></returns>
     public static List<string> ExtractAllSubstringsWithLookahead(string input)
     {
         List<string> subStrings = new List<string>();
@@ -84,7 +97,11 @@ public static class Helpers
         return subStrings;
     }
     
-    // Extracts all substrings, lookahead priority, in reverse order
+    /// <summary>
+    // Extracts all potential substrings of a string in reverse order, maintaining the ordering of the original characters. Prioritising lookahead.
+    // </summary>
+    // <param name="input">String to extract.</param>
+    // <returns>List<string></returns>
     public static List<string> ExtractAllSubstringsWithLookaheadInReverseOrder(string input)
     {
         List<string> subStrings = new List<string>();
