@@ -20,7 +20,7 @@ namespace Day1
                 total += int.Parse(first.ToString() + last.ToString());
             }
             
-            Console.WriteLine(total);
+            Console.WriteLine(total); // Count not quite right, need to debug more
         }
         
         public static void TerribleSolution()
