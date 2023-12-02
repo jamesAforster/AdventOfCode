@@ -1,3 +1,3 @@
 ﻿ using Day1;
 
- Solution.BothParts();
+ Solution.RefactoredSolution();

@@ -17,7 +17,7 @@ public static class Helpers
     /// <summary>
     /// Reads the input file and returns an array containing sub arrays of a defined size.
     /// </summary>
-    /// <param name="subArraySize">Desired size of the sub arrays.</param>
+    /// <param name="subArraySize">Desired size of the inner sub arrays.</param>
     /// <returns>string[][]</returns>
     public static string[][] ReadInputLinesAsGroups(int subArraySize)
     {
@@ -52,7 +52,7 @@ public static class Helpers
         return new string(charArray);
     }
     
-    // This extracts all potential substrings, character priority
+    // Extracts all potential substrings, character priority
     public static List<string> ExtractAllSubstrings(string input)
     {
         List<string> subStrings = new List<string>();
@@ -68,7 +68,7 @@ public static class Helpers
         return subStrings;
     }
     
-    // This extracts all substrings, lookahead priority
+    // Extracts all potential substrings, lookahead priority
     public static List<string> ExtractAllSubstringsWithLookahead(string input)
     {
         List<string> subStrings = new List<string>();
@@ -84,7 +84,7 @@ public static class Helpers
         return subStrings;
     }
     
-    // This extracts all substrings, lookahead priority, in reverse order
+    // Extracts all substrings, lookahead priority, in reverse order
     public static List<string> ExtractAllSubstringsWithLookaheadInReverseOrder(string input)
     {
         List<string> subStrings = new List<string>();

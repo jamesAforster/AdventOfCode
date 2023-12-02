@@ -5,7 +5,7 @@ namespace Day1
 {
     public static class Solution
     {
-        public static void BothParts()
+        public static void RefactoredSolution()
         {
             var total = 0;
             var input = Helpers.ReadInputLines();
@@ -20,7 +20,7 @@ namespace Day1
                 total += int.Parse(first.ToString() + last.ToString());
             }
             
-            Console.WriteLine(total); // Count not quite right, need to debug more
+            Console.WriteLine(total); // Count not quite right result, need to debug a bit more.
         }
         
         public static void TerribleSolution()
