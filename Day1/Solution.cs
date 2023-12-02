@@ -1,52 +1,29 @@
+using System.Text.RegularExpressions;
 using Library;
 
 namespace Day1
 {
     public static class Solution
     {
-        public static void PartOne()
+        public static void BothParts()
         {
-            var results = new List<string>();
+            var total = 0;
             var input = Helpers.ReadInputLines();
-            
-            foreach (string s in input)
+
+            var lines = input.Select(str => numberRegex.Matches(str));
+
+            foreach (MatchCollection l in lines)
             {
-                foreach (char c in s)
-                {
-                    if (int.TryParse(c.ToString(), out int value))
-                    {
-                        var toAdd = new List<int>();
-                        
-                        toAdd.Add(value);
-
-                        var reversed = Helpers.Reverse(s);
-
-                        foreach (char reversedC in reversed)
-                        {
-                            if (int.TryParse(reversedC.ToString(), out int reversedValue))
-                            {
-                                toAdd.Add(reversedValue);
-                                break;
-                            }
-                        }
-                        
-                        results.Add(toAdd[0].ToString() + toAdd[1]);
-                        break;
-                    }
-                }
-            }
-
-            int final = 0;
-            
-            foreach(string n in results)
-            {
-                final += int.Parse(n);
+                var first = int.TryParse(l.First().Value, out int f) ? f : TryGetValueFromDictionary(l.First().Value);
+                var last = int.TryParse(l.Last().Value, out int s) ? s : TryGetValueFromDictionary(l.Last().Value);
+                
+                total += int.Parse(first.ToString() + last.ToString());
             }
             
-            Console.WriteLine(final);
+            Console.WriteLine(total);
         }
         
-        public static void PartTwo()
+        public static void TerribleSolution()
         {
             var results = new List<List<int>>();
             
@@ -138,6 +115,13 @@ namespace Day1
             
             Console.WriteLine(total);
         }
+
+        private static int TryGetValueFromDictionary(string s)
+        {
+            return numberDict.TryGetValue(s, out var number) ? number : 0;
+        }
+        
+        private static Regex numberRegex = new Regex("\\d|(one|two|three|four|five|six|seven|eight|nine)");
         
         private static Dictionary<string, int> numberDict = 
             new Dictionary<string, int>()

@@ -18,9 +18,9 @@ namespace Day2
 
             for (int i = 1; i <= input.Length; i++)
             {
+                var validGame = true;
                 var game = input[i - 1].Split(": ").Last();
                 var individualGames = game.Split("; ");
-                var validGame = true;
 
                 foreach (string g in individualGames)
                 {
@@ -62,7 +62,6 @@ namespace Day2
             {
                 var game = input[i - 1].Split(": ").Last();
                 var individualGames = game.Split("; ");
-                var validGame = true;
                 
                 Dictionary<string, int> TotalCubes = new Dictionary<string, int>()
                 {
@@ -77,13 +76,9 @@ namespace Day2
 
                     foreach (var individualScores in scores)
                     {
-                        var colour = individualScores.Split(" ")[1].Replace(",", "");
+                        var colour = individualScores.Split(" ")[1].TrimEnd(',');
                         var count = int.Parse(individualScores.Split(" ")[0]);
-
-                        if (TotalCubes[colour] < count)
-                        {
-                            TotalCubes[colour] = count;
-                        }
+                        TotalCubes[colour] = TotalCubes[colour] < count ? count : TotalCubes[colour];
                     }
                 }
 
