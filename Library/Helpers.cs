@@ -14,11 +14,7 @@ public static class Helpers
         return File.ReadAllText(_filepath);
     }
     
-    /// <summary>
-    /// Reads the input file and returns an array containing sub arrays of a defined size.
-    /// </summary>
-    /// <param name="subArraySize">Desired size of the inner sub arrays.</param>
-    /// <returns>string[][]</returns>
+    
     public static string[][] ReadInputLinesAsGroups(int subArraySize)
     {
         List<string[]> arrayList = new List<string[]>();
@@ -58,10 +54,10 @@ public static class Helpers
     }
     
     /// <summary>
-    // Extracts all potential substrings of a string, maintaining the ordering of the original characters. Prioritises each character in turn.
-    // </summary>
-    // <param name="input">String to extract.</param>
-    // <returns>List<string></returns>
+    /// Extracts all potential substrings of a string, maintaining the ordering of the original characters. Prioritises each character in turn.
+    /// </summary>
+    /// <param name="input">String to extract.</param>
+    /// <returns>List<string></returns>
     public static List<string> ExtractAllSubstrings(string input)
     {
         List<string> subStrings = new List<string>();
@@ -78,10 +74,10 @@ public static class Helpers
     }
     
     /// <summary>
-    // Extracts all potential substrings of a string, maintaining the ordering of the original characters. Prioritising lookahead.
-    // </summary>
-    // <param name="input">String to extract.</param>
-    // <returns>List<string></returns>
+    /// Extracts all potential substrings of a string, maintaining the ordering of the original characters. Prioritising lookahead.
+    /// </summary>
+    /// <param name="input">String to extract.</param>
+    /// <returns>List<string></returns>
     public static List<string> ExtractAllSubstringsWithLookahead(string input)
     {
         List<string> subStrings = new List<string>();
@@ -98,10 +94,10 @@ public static class Helpers
     }
     
     /// <summary>
-    // Extracts all potential substrings of a string in reverse order, maintaining the ordering of the original characters. Prioritising lookahead.
-    // </summary>
-    // <param name="input">String to extract.</param>
-    // <returns>List<string></returns>
+    /// Extracts all potential substrings of a string in reverse order, maintaining the ordering of the original characters. Prioritising lookahead.
+    /// </summary>
+    /// <param name="input">String to extract.</param>
+    /// <returns>List<string></returns>
     public static List<string> ExtractAllSubstringsWithLookaheadInReverseOrder(string input)
     {
         List<string> subStrings = new List<string>();
