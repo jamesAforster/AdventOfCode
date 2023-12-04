@@ -1,3 +1,3 @@
 ﻿using Day4;
 
-Solution.Part1();
+Solution.Part2();
