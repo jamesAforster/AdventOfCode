@@ -72,7 +72,14 @@ namespace Day4
                     {
                         wins += 1;
 
-                        var newCard = Cards.Find(c => c.CardNumber == card.CardNumber + wins);
+                        var cardToAdd = Cards.Find(c => c.CardNumber == card.CardNumber + wins);
+
+                        var newCard = new Card()
+                        {
+                            CardNumber = cardToAdd.CardNumber,
+                            ScratchedNumbers = cardToAdd.ScratchedNumbers,
+                            WinningNumbers = cardToAdd.WinningNumbers
+                        };
                         
                         card.InnerCards.Add(newCard);
                     }
